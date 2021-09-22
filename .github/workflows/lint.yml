@@ -1,4 +1,4 @@
-name: Run tests on Pull Request or Push
+name: Lint pull requests or commits
 on:
   push:
     branches:
@@ -12,7 +12,7 @@ on:
       - ready_for_review
 jobs:
   test:
-    name: Run tests
+    name: Lint code
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
@@ -26,11 +26,5 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      - name: Run test against code
-        run: npm run test
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
+      - name: Lint code
+        run: npm run lint

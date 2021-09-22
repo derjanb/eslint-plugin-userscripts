@@ -11,15 +11,18 @@ ruleTester.run('require-name', rule, {
   invalid: [
     {
       code: `// ==UserScript==
-    // @description abc
-    // ==/UserScript==`,
+      // @description abc
+      // ==/UserScript==`,
       errors: [{ messageId: 'missingAttribute' }]
     },
     {
       code: `// ==UserScript==
       // @name This is my name
       // @name This is my second name
-      // ==/UserScript==`,
+      // ==/UserScript==
+      console.info(variable)
+      debugger
+      /* debugging above */`,
       errors: [{ messageId: 'multipleNames' }]
     },
     {
@@ -27,11 +30,11 @@ ruleTester.run('require-name', rule, {
       // @description This is my description
       // @name This is my name
       // ==/UserScript==`,
-      errors: [{ messageId: 'nameAtBeginning' }],
       output: `// ==UserScript==
       // @name This is my name
       // @description This is my description
-      // ==/UserScript==`
+      // ==/UserScript==`,
+      errors: [{ messageId: 'nameAtBeginning' }]
     }
   ]
 });

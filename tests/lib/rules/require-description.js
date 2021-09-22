@@ -11,15 +11,23 @@ ruleTester.run('require-description', rule, {
   invalid: [
     {
       code: `// ==UserScript==
-    // @name abc
-    // ==/UserScript==`,
+      // @name abc
+      // ==/UserScript==`,
+      errors: [{ messageId: 'missingAttribute' }]
+    },
+    {
+      code: `// ==UserScript==
+      // @name abc
+      // ==/UserScript==`,
+      options: ['required'],
       errors: [{ messageId: 'missingAttribute' }]
     },
     {
       code: `// ==UserScript==
       // @description This is my description
       // @description This is my second description
-      // ==/UserScript==`,
+      // ==/UserScript==
+      // more comments here`,
       errors: [{ messageId: 'multipleDescriptions' }]
     }
   ]
