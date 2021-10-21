@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "plugins": ["eslint-plugin", "import", "unicorn"],
   "extends": [
     "eslint:recommended",
@@ -7,16 +7,23 @@
     "plugin:import/recommended",
     "plugin:unicorn/recommended"
   ],
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "env": {
     "node": true
   },
   "rules": {
     "eslint-plugin/test-case-property-ordering": "error",
+    "eslint-plugin/test-case-shorthand-strings": "error",
     "unicorn/prefer-module": "off",
     "unicorn/filename-case": "off",
     "unicorn/prefer-array-some": "off",
     "unicorn/prevent-abbreviations": "off",
-    "unicorn/prefer-array-find": "error"
+    "unicorn/no-array-reduce": "off",
+    "unicorn/no-nested-ternary": "off",
+    "unicorn/prefer-array-find": "error",
+    "unicorn/no-null": "off"
   },
   "overrides": [
     {

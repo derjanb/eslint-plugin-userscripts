@@ -9,11 +9,13 @@ ruleTester.run('require-attribute-space-prefix', rule, {
     // @namespace    https://github.com/Yash-Singh1/UserScripts
     // @version      1.3
     // @description  Adds bottom padding to the Swagger UI
+    //
     // @author       Yash Singh
     // @match        https://*/*
     // @match        http://*/*
     // @icon         https://petstore.swagger.io/favicon-32x32.png
     // @grant        none
+    //
     // @homepage     https://github.com/Yash-Singh1/UserScripts/tree/main/Bottom_Padding_to_Swagger_UI#readme
     // @homepageURL  https://github.com/Yash-Singh1/UserScripts/tree/main/Bottom_Padding_to_Swagger_UI#readme
     // @supportURL   https://github.com/Yash-Singh1/UserScripts/issues

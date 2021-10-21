@@ -8,6 +8,9 @@ ruleTester.run('require-version', rule, {
     // @version Alpha-v1
     // ==/UserScript==`,
     `// ==UserScript==
+    // @version 0
+    // ==/UserScript==`,
+    `// ==UserScript==
     // @version 0.0.0
     // ==/UserScript==`,
     `// ==UserScript==

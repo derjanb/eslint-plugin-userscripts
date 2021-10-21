@@ -37,7 +37,11 @@ This rule has an object option:
 // ==UserScript==
 // @name My Userscript's Name
 // @description Description on my userscript
+//
+// @version 1.0.0
 // @license ISC
+//
+// @grant none
 // ==/UserScript==
 ```
 
@@ -49,16 +53,6 @@ This rule has an object option:
 console.log('starting userscript');
 
 // ==UserScript==
-// ==/UserScript==
-```
-
-```js
-/* eslint userscripts/no-invalid-metadata: ["error", { top: "required" }] */
-
-// ==UserScript==
-// @name My Userscript's Name
-// @description Description on my userscript
-// @license ISC
 // ==/UserScript==
 ```
 

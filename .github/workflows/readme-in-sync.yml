@@ -1,4 +1,4 @@
-name: Lint pull requests or commits
+name: Ensure both READMEs are synced
 on:
   push:
     branches:
@@ -10,9 +10,10 @@ on:
       - opened
       - synchronize
       - ready_for_review
+
 jobs:
   test:
-    name: Lint code
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
@@ -26,5 +27,15 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      - name: Lint code
-        run: npm run lint
+      - name: Copy Documentation README
+        run: ./.husky/pre-commit
+
+      - name: Ensure there is no Git Changes
+        run: |
+          if [ -z "$(git status --short)" ]
+          then
+            echo "README.md and docs/README.md are in sync"
+          else
+            echo "Make sure that the README.md and docs/README.md are in sync"
+            exit 1
+          fi
