@@ -1,5 +1,5 @@
 const createValidator = require('../../../lib/utils/createValidator.js');
-const assert = require('assert');
+const assert = require('node:assert');
 
 it('should properly generate description', () => {
   assert.strictEqual(
