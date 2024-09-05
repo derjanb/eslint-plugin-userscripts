@@ -19,6 +19,8 @@ ruleTester.run('no-invalid-grant', rule, {
     // @grant   GM.download
     // @grant   GM_cookie
     // @grant   GM.cookie
+    // @grant   GM.getValues
+    // @grant   GM.setValues
     // @grant   unsafeWindow
     // @grant   window.onurlchange
     // ==/UserScript==
