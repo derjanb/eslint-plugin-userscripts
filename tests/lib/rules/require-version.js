@@ -33,7 +33,10 @@ ruleTester.run('require-version', rule, {
     // ==/UserScript==`,
     `// ==UserScript==
     // @version 1.1.1.1.2.0.1.1.1.1.1
-    // ==/UserScript==`
+    // ==/UserScript==`,
+    `// ==UserScript==
+    // @version @.€.$
+    // ==/UserScript==`,
   ],
   invalid: [
     {
@@ -71,12 +74,6 @@ ruleTester.run('require-version', rule, {
     {
       code: `// ==UserScript==
       // @version 5 .6
-      // ==/UserScript==`,
-      errors: [{ messageId: 'invalidVersion' }]
-    },
-    {
-      code: `// ==UserScript==
-      // @version @.€.$
       // ==/UserScript==`,
       errors: [{ messageId: 'invalidVersion' }]
     }

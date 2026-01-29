@@ -22,6 +22,8 @@ ruleTester.run('no-invalid-headers', rule, {
     // @downloadURL    https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
     // @updateURL      https://raw.githubusercontent.com/Yash-Singh1/UserScripts/main/Bottom_Padding_to_Swagger_UI/Bottom_Padding_to_Swagger_UI.user.js
     // @nocompat       Chrome
+    // @run-in         normal-tabs
+    // @run-in         container-id-1
     // @history        1.0 Initial release
     // @copyright      2020-2021, Yash Singh (https://github.com/Yash-Singh1)
     // ==/UserScript==

@@ -1,20 +1,20 @@
-var rule = require('..')['better-use-match'];
+var rule = require('..')['avoid-regexp-include'];
 var RuleTester = require('eslint').RuleTester;
 
 var ruleTester = new RuleTester();
-ruleTester.run('better-use-match', rule, {
+ruleTester.run('avoid-regexp-include', rule, {
   valid: [
     `// ==UserScript==
     // @description This is my description
-    // @match *://*/*
+    // @include https://*
     // ==/UserScript==`,
   ],
   invalid: [
     {
       code: `// ==UserScript==
-      // @include *://*/*
+      // @include /https?:\\/\\/foo.bar\\/.*/
       // ==/UserScript==`,
-      errors: [{ messageId: 'betterUseMatch' }]
+      errors: [{ messageId: 'avoidRegExpInclude' }]
     }
   ]
 });
